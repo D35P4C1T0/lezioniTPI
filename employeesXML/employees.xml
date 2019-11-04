@@ -1,0 +1,23 @@
+<employees>
+    <employee id="111">
+        <firstName>Lokesh</firstName>
+        <lastName>Singh</lastName>
+        <location>India</location>
+    </employee>
+    <employee id="222">
+        <firstName>Alex</firstName>
+        <lastName>Gussin</lastName>
+        <location>Russia</location>
+    </employee>
+    <employee id="333">
+        <firstName>David</firstName>
+        <lastName>Feezor</lastName>
+        <location>USA</location>
+    </employee>
+    <employee id="444">
+        <firstName>Gujarrath</firstName>
+        <lastName>SkiptidiSkuptidi</lastName>
+        <location>SKidadle
+        </location>
+    </employee>
+</employees>
