@@ -25,7 +25,10 @@ public class XMLtoList {
     /**
      * @param args the command line arguments
      */
-    public static NodeList getTree(String filename) throws ParserConfigurationException, SAXException, IOException {
+    
+    private NodeList nList;
+
+    public NodeList getTree(String filename) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -33,14 +36,16 @@ public class XMLtoList {
         document.getDocumentElement().normalize();
         Element root = document.getDocumentElement();
         //System.out.println(root.getNodeName());
-        NodeList nList = document.getElementsByTagName("employee");
-        return nList;
+        this.nList = document.getElementsByTagName("employee");
+        return this.nList;
     }
 
-    public String toString(NodeList nList) {
+    
+    @Override
+    public String toString() {
         String out = "";
-        for (int temp = 0; temp < nList.getLength(); temp++) {
-            Node node = nList.item(temp);
+        for (int temp = 0; temp < this.nList.getLength(); temp++) {
+            Node node = this.nList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) node;
                 out += ("ID impiegato: " + eElement.getAttribute("id"))

@@ -5,31 +5,40 @@
  */
 package employeesxml;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /**
  *
  * @author 71299951
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
-    private Label label;
-    
+    private Button button;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private ListView<String> listaPersone;
+
+    @FXML
+    private void handleButtonAction(ActionEvent event) throws ParserConfigurationException, SAXException, IOException {
+        XMLtoList listaNodi = new XMLtoList();
+        listaNodi.getTree("employees.xml");
+        //listaPersone.set;
+        listaPersone.getItems().add(listaNodi.toString());
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //todo
-    }    
-    
+    }
+
 }
