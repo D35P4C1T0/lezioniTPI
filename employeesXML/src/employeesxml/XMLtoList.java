@@ -7,6 +7,7 @@ package employeesxml;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,7 +26,6 @@ public class XMLtoList {
     /**
      * @param args the command line arguments
      */
-    
     private NodeList nList;
 
     public NodeList getTree(String filename) throws ParserConfigurationException, SAXException, IOException {
@@ -40,7 +40,33 @@ public class XMLtoList {
         return this.nList;
     }
 
-    
+    public void addLavoratore(Persona impiegato) {
+        
+    }
+
+    public ArrayList<Persona> getListaLavoratori() {
+        ArrayList<Persona> out = new ArrayList<>();
+        for (int temp = 0; temp < this.nList.getLength(); temp++) {
+            Node node = this.nList.item(temp);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) node;
+
+                String id = eElement.getAttribute("id");
+                String nome = eElement.getElementsByTagName("firstName").item(0).getTextContent();
+                String cognome = eElement.getElementsByTagName("lastName").item(0).getTextContent();
+                String paese = eElement.getElementsByTagName("location").item(0).getTextContent();
+                Persona lavoratore = new Persona(id, nome, cognome, paese);
+                out.add(lavoratore);
+
+                /*System.out.println("ID impiegato: " + eElement.getAttribute("id"));
+                System.out.println("Nome: " + eElement.getElementsByTagName("firstName").item(0).getTextContent());
+                System.out.println("Cognome: " + eElement.getElementsByTagName("lastName").item(0).getTextContent());
+                System.out.println("Luogo: " + eElement.getElementsByTagName("location").item(0).getTextContent());*/
+            }
+        }
+        return out;
+    }
+
     @Override
     public String toString() {
         String out = "";
