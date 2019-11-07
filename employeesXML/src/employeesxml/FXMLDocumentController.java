@@ -40,22 +40,29 @@ public class FXMLDocumentController implements Initializable {
     private Button buttonAggiungiDipendente;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws ParserConfigurationException, SAXException, IOException {
-        XMLtoList listaNodi = new XMLtoList();
-        listaNodi.getTree("employees.xml");
+    private void update(ActionEvent event) throws ParserConfigurationException, SAXException, IOException {
+        XMLtoList listaNodiLavoratori = new XMLtoList();
+        listaNodiLavoratori.getTree("employees.xml");
         //listaPersone.set;
-        listaPersone.getItems().addAll((Collection) listaNodi.getListaLavoratori());
+        if (addPersonaDaCampi() != null) {
+            listaNodiLavoratori.addLavoratore(addPersonaDaCampi());
+        }
+
+        listaPersone = new ListView<>();
+        listaPersone.getItems().addAll((Collection) listaNodiLavoratori.getListaLavoratori()); //aggiorna listview
+
+    }
+
+    private Persona addPersonaDaCampi() {
+        if (campoID.getText() == "" && campoNome.getText() == "" && campoCognome.getText() == "" && campoPaese.getText() == "") {
+            return null;
+        }
+        return new Persona(campoID.getText(), campoNome.getText(), campoCognome.getText(), campoPaese.getText());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //todo
-    }
-
-    @FXML
-    private void aggiungiDipendente(ActionEvent event) {
-        Persona temp = new Persona(campoID.getText(), campoNome.getText(), campoCognome.getText(), campoPaese.getText());
-        listaPersone.getItems().add(temp.toString());
     }
 
 }

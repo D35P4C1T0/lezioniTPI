@@ -41,7 +41,7 @@ public class XMLtoList {
     }
 
     public void addLavoratore(Persona impiegato) {
-        
+        this.nList.
     }
 
     public ArrayList<Persona> getListaLavoratori() {

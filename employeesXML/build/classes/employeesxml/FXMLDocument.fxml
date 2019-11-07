@@ -7,12 +7,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="342.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeesxml.FXMLDocumentController">
     <children>
-        <Button fx:id="button" layoutX="14.0" layoutY="30.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Button fx:id="button" layoutX="14.0" layoutY="30.0" onAction="#update" text="Click Me!" />
       <ListView fx:id="listaPersone" layoutX="106.0" layoutY="30.0" prefHeight="237.0" prefWidth="464.0" />
       <TextField fx:id="campoNome" layoutX="596.0" layoutY="30.0" />
       <TextField fx:id="campoCognome" layoutX="596.0" layoutY="77.0" />
       <TextField fx:id="campoPaese" layoutX="596.0" layoutY="123.0" />
       <TextField fx:id="campoID" layoutX="667.0" layoutY="165.0" prefHeight="26.0" prefWidth="100.0" />
-      <Button fx:id="buttonAggiungiDipendente" layoutX="596.0" layoutY="165.0" mnemonicParsing="false" onAction="#aggiungiDipendente" text="Button" />
+      <Button fx:id="buttonAggiungiDipendente" layoutX="596.0" layoutY="165.0" mnemonicParsing="false" onAction="#update" text="Button" />
     </children>
 </AnchorPane>
