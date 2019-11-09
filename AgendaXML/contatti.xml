@@ -1,0 +1,17 @@
+<contatti>
+    <contatto>
+        <nome>Gustavo</nome>
+        <cognome>Laffïka</cognome>
+        <nTel>420</nTel>
+    </contatto>
+    <contatto>
+        <nome>Gigi</nome>
+        <cognome>Sonnino</cognome>
+        <nTel>123</nTel>
+    </contatto>
+    <contatto>
+        <nome>gesu</nome>
+        <cognome>dinazaret</cognome>
+        <nTel>666</nTel>
+    </contatto>
+</contatti>
