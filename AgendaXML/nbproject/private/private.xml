@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/matteo/Documents/Programmazione/Java%20NB/AgendaXML/src/agendaxml/AgendaXML.java</file>
-            <file>file:/home/matteo/Documents/Programmazione/Java%20NB/AgendaXML/src/agendaxml/XMLtoAgenda.java</file>
-            <file>file:/home/matteo/Documents/Programmazione/Java%20NB/AgendaXML/src/agendaxml/FXMLDocumentController.java</file>
-            <file>file:/home/matteo/Documents/Programmazione/Java%20NB/AgendaXML/src/agendaxml/Contatto.java</file>
+            <file>file:/home/matteo/Documenti/Repos/lezioniTPI/AgendaXML/src/agendaxml/Agenda.java</file>
+            <file>file:/home/matteo/Documenti/Repos/lezioniTPI/AgendaXML/src/agendaxml/AgendaXML.java</file>
+            <file>file:/home/matteo/Documenti/Repos/lezioniTPI/AgendaXML/src/agendaxml/FXMLDocumentController.java</file>
         </group>
     </open-files>
 </project-private>

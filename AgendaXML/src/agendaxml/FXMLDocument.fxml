@@ -5,16 +5,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="rmvContattoButton" prefHeight="340.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agendaxml.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rmvContattoButton" prefHeight="320.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agendaxml.FXMLDocumentController">
     <children>
-        <ListView fx:id="listaContatti" layoutX="14.0" layoutY="21.0" onContextMenuRequested="#fillFields" prefHeight="200.0" prefWidth="200.0" />
-        <TextField fx:id="fieldNome" layoutX="222.0" layoutY="21.0" promptText="Nome" />
-        <TextField fx:id="fieldCognome" layoutX="222.0" layoutY="54.0" promptText="Cognome" />
-        <TextField fx:id="fieldNTel" layoutX="222.0" layoutY="89.0" promptText="N. Telefono" />
-        <Button fx:id="editButton" layoutX="14.0" layoutY="236.0" mnemonicParsing="false" onAction="#allowEdit" text="Modifica" />
-        <Button fx:id="removeContattoButton" layoutX="148.0" layoutY="236.0" mnemonicParsing="false" text="Elimina" />
-        <Button fx:id="addContattoButton" layoutX="317.0" layoutY="131.0" mnemonicParsing="false" onAction="#addContattoToAgenda" text="Aggiungi" />
-        <Button fx:id="saveButton" layoutX="288.0" layoutY="291.0" mnemonicParsing="false" onAction="#writeToXML" text="Scrivi su XML" />
-        <Button fx:id="importaButton" layoutX="288.0" layoutY="249.0" mnemonicParsing="false" onAction="#importXML" text="Leggi da XML" />
+        <ListView fx:id="listaContatti" layoutX="8.0" layoutY="21.0" onMouseClicked="#fillFields" prefHeight="200.0" prefWidth="225.0" />
+        <TextField fx:id="fieldNome" layoutX="255.0" layoutY="21.0" promptText="Nome" />
+        <TextField fx:id="fieldCognome" layoutX="255.0" layoutY="57.0" promptText="Cognome" />
+        <TextField fx:id="fieldNTel" layoutX="255.0" layoutY="95.0" promptText="N. Telefono" />
+        <Button fx:id="removeContattoButton" layoutX="255.0" layoutY="131.0" mnemonicParsing="false" onAction="#deleteContatto" text="Elimina" />
+        <Button fx:id="addContattoButton" layoutX="350.0" layoutY="131.0" mnemonicParsing="false" onAction="#addContattoToAgenda" text="Aggiungi" />
+        <Button fx:id="saveButton" layoutX="128.0" layoutY="232.0" mnemonicParsing="false" onAction="#writeToXML" text="Scrivi su XML" />
+        <Button fx:id="importaButton" layoutX="8.0" layoutY="232.0" mnemonicParsing="false" onAction="#importXML" text="Leggi da XML" />
     </children>
 </AnchorPane>

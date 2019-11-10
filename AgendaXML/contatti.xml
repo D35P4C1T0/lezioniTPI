@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<contatti>
-    <contatto>
-        <nome>Gustavo</nome>
-        <cognome>Laffoka</cognome>
-        <nTel>420</nTel>
-    </contatto>
-    <contatto>
-        <nome>Gigi</nome>
-        <cognome>Sonnino</cognome>
-        <nTel>123</nTel>
-    </contatto>
-    <contatto>
-        <nome>gesu</nome>
-        <cognome>dinazaret</cognome>
-        <nTel>666</nTel>
-    </contatto>
-</contatti>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><contatti><contatto><nome>Alvaro</nome><cognome>Soler</cognome><nTel>3312445560</nTel></contatto><contatto><nome>Pepe</nome><cognome>Monka</cognome><nTel>555-0101</nTel></contatto><contatto><nome>Gustavo</nome><cognome>Labrogna</cognome><nTel>555-9383</nTel></contatto></contatti>
