@@ -25,7 +25,11 @@ public class XMLtoAgenda {
 
     private NodeList nList;
 
-    public NodeList getTree(String filename) throws ParserConfigurationException, SAXException, IOException {
+    public XMLtoAgenda(String XMLfilename) throws ParserConfigurationException, SAXException, IOException {
+        this.makeTree(XMLfilename);
+    }
+
+    private void makeTree(String filename) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -34,7 +38,6 @@ public class XMLtoAgenda {
         Element root = document.getDocumentElement();
         //System.out.println(root.getNodeName());
         this.nList = document.getElementsByTagName("contatti");
-        return this.nList;
     }
 
     public List<Contatto> getListaContatti() {

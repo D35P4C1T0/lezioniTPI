@@ -16,6 +16,7 @@ public class Agenda {
     private List<Contatto> listaContatti;
 
     public Agenda() {
+        this.listaContatti = null;
     }
 
     public Agenda(List<Contatto> listaContatti) {

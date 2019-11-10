@@ -17,6 +17,10 @@ public class AgendaManager {
         this.agenda = agenda;
     }
 
+    public AgendaManager() {
+        this.agenda = new Agenda();
+    }
+
     public void addContatto(Contatto cnt) {
         this.agenda.addContatto(cnt);
     }
