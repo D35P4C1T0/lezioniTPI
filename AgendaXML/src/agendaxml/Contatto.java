@@ -35,6 +35,6 @@ public class Contatto {
 
     @Override
     public String toString() {
-        return "Contatto{" + "nome=" + nome + ", cognome=" + cognome + ", nTel=" + nTel + '}';
+        return nome + " " + cognome;
     }
 }

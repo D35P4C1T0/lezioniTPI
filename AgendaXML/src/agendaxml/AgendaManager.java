@@ -5,6 +5,8 @@
  */
 package agendaxml;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author matteo
@@ -28,5 +30,4 @@ public class AgendaManager {
     public void rmvContatto(Contatto cnt) {
         this.agenda.rmvContatto(cnt);
     }
-
 }

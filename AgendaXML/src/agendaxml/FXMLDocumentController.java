@@ -7,9 +7,12 @@ package agendaxml;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,20 +47,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button saveButton;
     @FXML
-    private ListView<Contatto> listaContatti;
+    private ListView<String> listaContatti;
+    @FXML
+    private Button importaButton;
 
-    XMLtoAgenda importer;
+    public XMLtoAgenda importer;
+    public AgendaManager agenda;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO: fetch dei contatti dall'xml
-        this.listaContatti = null;
-        try {
-            XMLtoAgenda importer = new XMLtoAgenda("contatti.xml");
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
         this.fieldNome.setDisable(true);
         this.fieldCognome.setDisable(true);
         this.fieldNTel.setDisable(true);
@@ -79,6 +77,7 @@ public class FXMLDocumentController implements Initializable {
         //Agenda temp = this.importer.getAgendaFromXML();
         Contatto tempCnt = new Contatto(this.fieldNome.getText(), this.fieldCognome.getText(), this.fieldNTel.getText());
         //temp.addContatto(tempCnt);
+        this.agenda.addContatto(tempCnt);
 
     }
 
@@ -93,5 +92,26 @@ public class FXMLDocumentController implements Initializable {
         this.fieldNome.setText(selezionato.getNome());
         this.fieldCognome.setText(selezionato.getCognome());
         this.fieldNTel.setText(selezionato.getnTel());
+    }
+
+    @FXML
+    private void importXML(ActionEvent event) throws ParserConfigurationException, SAXException, IOException {
+        // TODO: fetch dei contatti dall'xml
+        this.importer = new XMLtoAgenda("contatti.xml");
+        this.agenda = new AgendaManager(new Agenda(this.importer.getListaContatti()));
+        this.listaContatti = new ListView<>();
+
+        ArrayList<Contatto> tempLista = this.importer.getListaContatti();
+        ArrayList<String> listaContattiString = new ArrayList<>();
+        for (int i = 0; i < tempLista.size(); i++) {
+            listaContattiString.add(tempLista.get(i).toString());
+            System.out.println(tempLista.get(i));
+        }
+
+        this.listaContatti.getItems().add("galapagos");
+
+        //this.listaContatti.setItems((ObservableList<String>) listaContattiString);
+        //this.listaContatti.getItems().add("diocane");
+        //this.listaContatti.getItems().addAll(listaContattiString);
     }
 }

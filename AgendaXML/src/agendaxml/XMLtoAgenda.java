@@ -11,7 +11,7 @@ package agendaxml;
  */
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,11 +25,7 @@ public class XMLtoAgenda {
 
     private NodeList nList;
 
-    public XMLtoAgenda(String XMLfilename) throws ParserConfigurationException, SAXException, IOException {
-        this.makeTree(XMLfilename);
-    }
-
-    private void makeTree(String filename) throws ParserConfigurationException, SAXException, IOException {
+    public XMLtoAgenda(String filename) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -37,11 +33,12 @@ public class XMLtoAgenda {
         document.getDocumentElement().normalize();
         Element root = document.getDocumentElement();
         //System.out.println(root.getNodeName());
-        this.nList = document.getElementsByTagName("contatti");
+        this.nList = document.getElementsByTagName("contatto");
+        //return this.nList;
     }
 
-    public List<Contatto> getListaContatti() {
-        List<Contatto> out = null;
+    public ArrayList<Contatto> getListaContatti() {
+        ArrayList<Contatto> out = new ArrayList<>();
         for (int temp = 0; temp < this.nList.getLength(); temp++) {
             Node node = this.nList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE) {

@@ -5,7 +5,7 @@
  */
 package agendaxml;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,13 +13,13 @@ import java.util.List;
  */
 public class Agenda {
 
-    private List<Contatto> listaContatti;
+    private ArrayList<Contatto> listaContatti;
 
     public Agenda() {
         this.listaContatti = null;
     }
 
-    public Agenda(List<Contatto> listaContatti) {
+    public Agenda(ArrayList<Contatto> listaContatti) {
         this.listaContatti = listaContatti;
     }
 
