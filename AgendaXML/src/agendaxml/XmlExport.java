@@ -44,26 +44,20 @@ public class XmlExport implements Export {
             Element contatto = document.createElement("contatto");
             root.appendChild(contatto);
 
-            //you can also use staff.setAttribute("id", "1") for this
-            // firstname element
             Element nome = document.createElement("nome");
             nome.appendChild(document.createTextNode(agenda.getListaContatti().get(i).getNome()));
             contatto.appendChild(nome);
 
-            // lastname element
             Element cognome = document.createElement("cognome");
             cognome.appendChild(document.createTextNode(agenda.getListaContatti().get(i).getCognome()));
             contatto.appendChild(cognome);
 
-            // email element
             Element nTel = document.createElement("nTel");
             nTel.appendChild(document.createTextNode(agenda.getListaContatti().get(i).getnTel()));
             contatto.appendChild(nTel);
 
         }
 
-        // create the xml file
-        //transform the DOM Object to an XML File
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = null;
         try {
@@ -75,10 +69,6 @@ public class XmlExport implements Export {
         StreamResult streamResult = new StreamResult(new File(xmlFilePath));
 
         try {
-            // If you use
-            // StreamResult result = new StreamResult(System.out);
-            // the output will be pushed to the standard output ...
-            // You can use that for debugging
             transformer.transform(domSource, streamResult);
         } catch (TransformerException ex) {
             Logger.getLogger(XmlExport.class.getName()).log(Level.SEVERE, null, ex);

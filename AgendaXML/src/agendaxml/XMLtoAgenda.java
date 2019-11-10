@@ -32,9 +32,7 @@ public class XMLtoAgenda {
         Document document = builder.parse(new File(filename));
         document.getDocumentElement().normalize();
         Element root = document.getDocumentElement();
-        //System.out.println(root.getNodeName());
         this.nList = document.getElementsByTagName("contatto");
-        //return this.nList;
     }
 
     public ArrayList<Contatto> getListaContatti() {
