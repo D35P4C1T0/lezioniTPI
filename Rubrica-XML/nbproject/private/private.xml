@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/matteo/Documents/Repos/lezioniTPI/AgendaXML/src/agendaxml/XmlExport.java</file>
-            <file>file:/home/matteo/Documents/Repos/lezioniTPI/AgendaXML/src/agendaxml/XMLtoAgenda.java</file>
-            <file>file:/home/matteo/Documents/Repos/lezioniTPI/AgendaXML/src/agendaxml/FXMLDocumentController.java</file>
+            <file>file:/home/matteo/Documents/Repos/lezioniTPI/Rubrica-XML/src/rubricaXML/FXMLDocument.fxml</file>
+            <file>file:/home/matteo/Documents/Repos/lezioniTPI/Rubrica-XML/src/rubricaXML/AgendaXML.java</file>
         </group>
     </open-files>
 </project-private>

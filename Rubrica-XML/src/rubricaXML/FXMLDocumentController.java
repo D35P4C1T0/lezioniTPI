@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agendaxml;
+package rubricaXML;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,7 +45,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button importaButton;
 
-    public XMLtoAgenda importer;
+    public ImporterXML importer;
     public Agenda agenda;
 
     @Override
@@ -74,13 +74,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void writeToXML(ActionEvent event) {
         //todo
-        XmlExport exporter = new XmlExport();
+        ExportXML exporter = new ExportXML();
         exporter.export(agenda);
     }
 
     @FXML
     private void importXML(ActionEvent event) throws ParserConfigurationException, SAXException, IOException {
-        this.importer = new XMLtoAgenda("contatti.xml");
+        this.importer = new ImporterXML("contatti.xml");
         this.agenda = new Agenda(this.importer.getListaContatti());
         update();
 

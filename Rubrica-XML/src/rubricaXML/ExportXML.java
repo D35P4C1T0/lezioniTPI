@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agendaxml;
+package rubricaXML;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -20,7 +20,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class XmlExport implements Export {
+public class ExportXML implements Export {
 
     public static final String xmlFilePath = "contatti.xml";
 
@@ -32,7 +32,7 @@ public class XmlExport implements Export {
         try {
             documentBuilder = documentFactory.newDocumentBuilder();
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(XmlExport.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExportXML.class.getName()).log(Level.SEVERE, null, ex);
         }
         Document document = documentBuilder.newDocument();
         // root element
@@ -63,7 +63,7 @@ public class XmlExport implements Export {
         try {
             transformer = transformerFactory.newTransformer();
         } catch (TransformerConfigurationException ex) {
-            Logger.getLogger(XmlExport.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExportXML.class.getName()).log(Level.SEVERE, null, ex);
         }
         DOMSource domSource = new DOMSource(document);
         StreamResult streamResult = new StreamResult(new File(xmlFilePath));
@@ -71,7 +71,7 @@ public class XmlExport implements Export {
         try {
             transformer.transform(domSource, streamResult);
         } catch (TransformerException ex) {
-            Logger.getLogger(XmlExport.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExportXML.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         System.out.println("Done creating XML File");

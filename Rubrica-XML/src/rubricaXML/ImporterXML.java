@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agendaxml;
+package rubricaXML;
 
 /**
  *
@@ -21,11 +21,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class XMLtoAgenda {
+public class ImporterXML {
 
     private NodeList nList;
 
-    public XMLtoAgenda(String filename) throws ParserConfigurationException, SAXException, IOException {
+    public ImporterXML(String filename) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();

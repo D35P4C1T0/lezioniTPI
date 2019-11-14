@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="rmvContattoButton" prefHeight="320.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agendaxml.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rmvContattoButton" prefHeight="320.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rubricaXML.FXMLDocumentController">
     <children>
         <ListView fx:id="listaContatti" layoutX="8.0" layoutY="21.0" onMouseClicked="#fillFields" prefHeight="200.0" prefWidth="225.0" />
         <TextField fx:id="fieldNome" layoutX="255.0" layoutY="21.0" promptText="Nome" />
