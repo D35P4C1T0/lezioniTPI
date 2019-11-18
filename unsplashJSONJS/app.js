@@ -23,7 +23,7 @@ const loadData =
       });
 }
 
-                loadingButton.onclick = loadData
+loadingButton.onclick = loadData
 searchBar.onchange = loadData
     // searchBar.oninput = loadData //ocio che esaurisci le richieste
     // giornaliere
